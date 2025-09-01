@@ -1,0 +1,33 @@
+.page-admin-home{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 450px;
+    input,textarea,button{
+        width: 100%;
+    }
+    textarea{
+        min-height: 80px;
+    }
+    button{
+        background-color: #0A3566;
+        color: white;
+    }
+    .btn-remove{
+        background-color: darkred;
+    }
+    .campo{
+        margin: 2rem 0;
+    }
+}

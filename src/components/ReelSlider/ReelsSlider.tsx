@@ -39,6 +39,7 @@ export default function ReelsSlider() {
   return (
     <>
       <div className="reel-container">
+        <h1>Questões aleatórias</h1>
         <div
           className="reel"
           onWheel={(e) => {

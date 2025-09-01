@@ -1,0 +1,55 @@
+.page-livre {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 2rem;
+  .questoes {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    .questao {
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      min-height: 120px;
+      width: 100%;
+      padding: 1rem;
+      background-color: white;
+      transition: .3s ease;
+      .infos{
+        display: flex;
+        justify-content: space-between;
+      }
+      &:hover{
+        background-color: #d0d0d0;
+        scale: 1.02;
+      }
+    }
+  }
+  .selecionada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    .alternativas{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .alternativa{
+        margin: 0;
+        font-size: 1.1rem;
+        padding: 5px;
+        cursor: pointer;
+        border-bottom: solid 2px transparent;
+        transition: .3s ease;
+        &:hover{
+          border-bottom: solid 2px white;
+        }
+      }
+    }
+  }
+}
