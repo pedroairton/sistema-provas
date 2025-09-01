@@ -1,0 +1,42 @@
+.reel::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+.reel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.reel {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  width: 450px;
+  height: 750px;
+  margin-bottom: 1rem;
+}
+.swiper{
+  width: 100%;
+  height: 100%;
+}
+.reel-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.reel-card {
+  width: 450px;
+  height: 750px;
+  font-size: 24px;
+  text-align: center;
+  color: black;
+}
+
+.reel-controls button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
