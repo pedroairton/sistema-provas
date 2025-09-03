@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import "./Shuffle.css";
+import "./ReelsSlider.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
 
@@ -8,7 +8,7 @@ import "swiper/swiper-bundle.css";
 const SCROLL_THROTTLE_MS = 500;
 const PAGE_SIZE = 5;
 
-export default function Shuffle() {
+export default function ReelsSlider() {
   const swiperRef = useRef<SwiperType | null>(null);
   const isThrottledRef = useRef(false);
 
