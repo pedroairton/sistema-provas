@@ -35,6 +35,17 @@
   font-size: 24px;
   text-align: center;
   color: black;
+  h3{
+    font-size: 1.15rem;
+  }
+  .alternativas{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .alternativa{
+      font-size: 1.1rem;
+    }
+  }
 }
 
 .reel-controls button {

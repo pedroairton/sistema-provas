@@ -6,9 +6,10 @@ import { Swiper as SwiperType } from "swiper";
 import "swiper/swiper-bundle.css";
 
 const SCROLL_THROTTLE_MS = 500;
-const PAGE_SIZE = 5;
 
 export default function ReelsSlider() {
+  const token = localStorage.getItem("usuario-token");
+
   const swiperRef = useRef<SwiperType | null>(null);
   const isThrottledRef = useRef(false);
 
@@ -23,30 +24,36 @@ export default function ReelsSlider() {
 
     try {
       const response = await fetch(
-        `https://jsonplaceholder.typicode.com/posts?_start=${
-          page * PAGE_SIZE
-        }&_limit=${PAGE_SIZE}`
+        `http://localhost:8000/api/usuario/questoes/random`,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       const data = await response.json();
 
       const newReels = data.map((item: any) => ({
         id: item.id,
-        content: item.title,
+        titulo: item.titulo,
+        alternativas: item.alternativas
       }));
 
-      setReels((prev) => [...prev, ...newReels])
-      setPage((prev) => prev+1)
+      setReels((prev) => [...prev, ...newReels]);
+      setPage((prev) => prev + 1);
     } catch (error) {
-        console.error("Erro: ", error)
-    } finally{
-        setIsLoading(false)
+      console.error("Erro: ", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     // Carregar os primeiros slides ao montar
-    getMoreReels()
-  }, [])
+    getMoreReels();
+  }, []);
 
   const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
     if (isThrottledRef.current) return;
@@ -66,13 +73,13 @@ export default function ReelsSlider() {
     }, SCROLL_THROTTLE_MS);
   };
   const handleSlideChange = () => {
-    const swiper = swiperRef.current
-    if(!swiper) return
+    const swiper = swiperRef.current;
+    if (!swiper) return;
 
-    if(swiper.activeIndex >= reels.length - 1){
-        getMoreReels()
+    if (swiper.activeIndex >= reels.length - 1) {
+      getMoreReels();
     }
-  }
+  };
   return (
     <>
       <div className="reel-container">
@@ -97,7 +104,12 @@ export default function ReelsSlider() {
               {reels.map((reel) => (
                 <SwiperSlide key={reel.id}>
                   <div className="reel-card">
-                    {reel.content}
+                    <h3 className="titulo">{reel.titulo}</h3>
+                    <div className="alternativas">
+                      {reel.alternativas.map((alt: any) => (
+                        <p className="alternativa">{alt.texto}</p>
+                      ))}
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}

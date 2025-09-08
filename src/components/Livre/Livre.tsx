@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { truncarComReticencias } from "../../function";
 import "./Livre.scss";
+import { useNavigate } from "react-router";
 
 export default function Livre() {
   const token = localStorage.getItem("usuario-token");
+  const navigate = useNavigate()
 
   const [QuestaoSelecionada, setQuestaoSelecionada] = useState({
     id: "",
@@ -40,8 +42,8 @@ export default function Livre() {
           console.log("Erro HTTP: ", response.status);
         }
         if (response.status === 401 || response.status === 403) {
-          localStorage.removeItem("token");
-          // navigate('/login');
+          localStorage.clear();
+          navigate('/login');
         }
         console.log(data);
       } catch (error) {
