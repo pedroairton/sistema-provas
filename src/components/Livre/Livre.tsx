@@ -73,7 +73,6 @@ export default function Livre() {
   };
   const respondeQuestao = async (idAlt: string) => {
     const payload = {
-      usuario_id: 2, // simulando
       questao_id: QuestaoSelecionada.id,
       alternativa_selecionada_id: idAlt,
     };

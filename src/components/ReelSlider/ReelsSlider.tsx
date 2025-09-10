@@ -4,11 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
 
 import "swiper/swiper-bundle.css";
+import { useNavigate } from "react-router";
 
 const SCROLL_THROTTLE_MS = 500;
 
 export default function ReelsSlider() {
   const token = localStorage.getItem("usuario-token");
+  const navigate = useNavigate()
 
   const swiperRef = useRef<SwiperType | null>(null);
   const isThrottledRef = useRef(false);
@@ -35,10 +37,15 @@ export default function ReelsSlider() {
       );
       const data = await response.json();
 
+      if (response.status === 401 || response.status === 403) {
+        localStorage.clear();
+        navigate("/login");
+      }
+
       const newReels = data.map((item: any) => ({
         id: item.id,
         titulo: item.titulo,
-        alternativas: item.alternativas
+        alternativas: item.alternativas,
       }));
 
       setReels((prev) => [...prev, ...newReels]);
