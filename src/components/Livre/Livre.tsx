@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 
 export default function Livre() {
   const token = localStorage.getItem("usuario-token");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [QuestaoSelecionada, setQuestaoSelecionada] = useState({
     id: "",
@@ -19,6 +19,8 @@ export default function Livre() {
       },
     ],
   });
+
+  const [AltSelecionada, setAltSelecionada] = useState(String);
 
   const [questoes, setQuestoes] = useState([]);
 
@@ -43,7 +45,7 @@ export default function Livre() {
         }
         if (response.status === 401 || response.status === 403) {
           localStorage.clear();
-          navigate('/login');
+          navigate("/login");
         }
         console.log(data);
       } catch (error) {
@@ -71,12 +73,14 @@ export default function Livre() {
       console.error("Erro: ", error);
     }
   };
-  const respondeQuestao = async (idAlt: string) => {
+  const respondeQuestao = async (e: any) => {
+    e.preventDefault();
+    console.log("alt selecionada: ", AltSelecionada);
     const payload = {
       questao_id: QuestaoSelecionada.id,
-      alternativa_selecionada_id: idAlt,
+      alternativa_selecionada_id: AltSelecionada,
     };
-    console.log(payload);
+    console.log("payload: ", payload);
 
     try {
       const response = await fetch(
@@ -130,15 +134,26 @@ export default function Livre() {
           <div className="alternativas">
             {QuestaoSelecionada.alternativas.map((alt) => (
               <p
-                className="alternativa"
                 key={alt.id}
+                className={
+                  "alternativa " + (AltSelecionada === alt.id ? "ativa" : "")
+                }
                 onClick={() => {
-                  respondeQuestao(alt.id);
+                  setAltSelecionada(alt.id);
+                  // respondeQuestao(alt.id);
                 }}
               >
-                {alt.texto}
+                {alt.id}- {alt.texto}
               </p>
             ))}
+            <button
+            className="btn-responder"
+              onClick={(e) => {
+                respondeQuestao(e);
+              }}
+            >
+              Enviar Resposta
+            </button>
           </div>
         </form>
       </section>

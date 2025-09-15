@@ -19,36 +19,44 @@
       width: 100%;
       padding: 1rem;
       background-color: white;
-      transition: .3s ease;
-      .infos{
+      transition: 0.3s ease;
+      .infos {
         display: flex;
         justify-content: space-between;
       }
-      &:hover{
+      &:hover {
         background-color: #d0d0d0;
         scale: 1.02;
       }
     }
   }
-  .selecionada{
+  .selecionada {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    .alternativas{
+    .alternativas {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      .alternativa{
+      .alternativa {
         margin: 0;
         font-size: 1.1rem;
         padding: 5px;
         cursor: pointer;
         border-bottom: solid 2px transparent;
-        transition: .3s ease;
-        &:hover{
+        transition: 0.3s ease;
+        border: solid 2px transparent;
+        &:hover {
           border-bottom: solid 2px white;
         }
+      }
+      .alternativa.ativa {
+        border-left: solid 2px white;
+      }
+      .btn-responder{
+        background-color: white;
+        color: #0A3566;
       }
     }
   }
