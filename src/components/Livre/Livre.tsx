@@ -25,6 +25,7 @@ export default function Livre() {
   const [questoes, setQuestoes] = useState([]);
 
   useEffect(() => {
+    console.log(QuestaoSelecionada)
     const getQuestoes = async () => {
       try {
         const response = await fetch(
@@ -129,6 +130,7 @@ export default function Livre() {
               ))
             : ""}
         </div>
+        {QuestaoSelecionada.id ? 
         <form className="selecionada">
           <h3 className="titulo">{QuestaoSelecionada.titulo}</h3>
           <div className="alternativas">
@@ -155,7 +157,9 @@ export default function Livre() {
               Enviar Resposta
             </button>
           </div>
-        </form>
+        </form> 
+        : 
+        ''}
       </section>
     </>
   );
