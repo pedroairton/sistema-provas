@@ -6,6 +6,7 @@ import ReelsSlider from "./components/ReelSlider/ReelsSlider";
 import { BrowserRouter as Router, Routes, Route} from "react-router";
 import UsuarioHome from "./components/Usuario/UsuarioHome";
 import Login from "./pages/Login";
+import Estatisticas from "./components/Estatisticas/Estatisticas";
 
 // import ReelSlider from './components/ReelSlider/ReelSlider'
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/livre" element={<Livre />}></Route>
             <Route path="/admin/home" element={<AdminHome />}></Route>
             <Route path="/usuario/home" element={<UsuarioHome />}></Route>
+            <Route path="/estatisticas" element={<Estatisticas/>}></Route>
           </Route>
         </Routes>
       </Router>

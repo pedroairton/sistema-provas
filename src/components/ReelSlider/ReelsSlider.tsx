@@ -89,7 +89,7 @@ export default function ReelsSlider() {
   };
   return (
     <>
-      <div className="reel-container">
+      <section className="reel-container">
         <h1>Shuffle</h1>
         <div
           className="reel"
@@ -123,7 +123,7 @@ export default function ReelsSlider() {
             </Swiper>
           </>
         </div>
-      </div>
+      </section>
     </>
   );
 }

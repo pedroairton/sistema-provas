@@ -1,0 +1,52 @@
+.page-estatisticas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .estatisticas{
+        padding: 2rem;
+        background-color: white;
+        border-radius: 15px;
+        width: 1280px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        .stat{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 20px;
+            padding: 1.5rem;
+            background-color: #f8f8f8;
+            width: fit-content;
+            .titulo{
+                font-size: 1.5rem;
+            }
+        }
+        .perc-acerto{
+            .grafico{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                svg{
+                    circle{
+                        transition: 1s ease;
+                    }
+                }
+                .percentual{
+                    position: absolute;
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    color: #252525;
+                }
+            }
+        }
+        .total-questoes{
+            h2{
+                font-size: 6rem;
+                margin: auto;
+            }
+        }
+    }
+}

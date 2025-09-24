@@ -38,7 +38,9 @@ export default function Navbar() {
             <span>Modo Livre</span>
           </Link>
           <a href="">Prova Diária</a>
-          <a href="">Estatísticas</a>
+          <Link to={"/estatisticas"}>
+            <span>Estatísticas</span>
+          </Link>
         </div>
       </nav>
     </>
