@@ -6,7 +6,13 @@ export default function Estatisticas() {
   const token = localStorage.getItem("usuario-token");
   const navigate = useNavigate();
 
-  const [percentualAcerto, setPercentualAcerto] = useState(0);
+  // const [percentualAcerto, setPercentualAcerto] = useState(0);
+  const [estatisticas, setEstatisticas] = useState({
+    percentual_acerto: '',
+    percentual_erro: '',
+    total_questoes_respondidas: '',
+    total_respostas_corretas: '',
+  })
   const [percentualAcertoSvg, setPercentualAcertoSvg] = useState(282.7); // valor 0 da circunferencia
 
   const updateProgressBar = (percentage: number) => {
@@ -35,7 +41,7 @@ export default function Estatisticas() {
       }
       console.log(data);
       updateProgressBar(data.estatisticas.percentual_acerto);
-      setPercentualAcerto(data.estatisticas.percentual_acerto);
+      setEstatisticas(data.estatisticas);
     } catch (error) {
       console.error("Erro: ", error);
     }
@@ -50,6 +56,7 @@ export default function Estatisticas() {
       <section className="page-estatisticas">
         <h1>Suas Estatísticas</h1>
         <div className="estatisticas">
+          <i>*Suas estatísticas são atualizadas a cada alguns minutos</i>
           <div className="perc-acerto stat">
             <h3 className="titulo">Percentual de Acerto Geral</h3>
             <div className="grafico">
@@ -75,12 +82,12 @@ export default function Estatisticas() {
                   transform="rotate(-90 50 50)"
                 />
               </svg>
-              <h2 className="percentual">{percentualAcerto}%</h2>
+              <h2 className="percentual">{estatisticas.percentual_acerto}%</h2>
             </div>
           </div>
           <div className="total-questoes stat">
             <h3 className="titulo">Total de questões respondidas</h3>
-            <h2>3</h2>
+            <h2>{estatisticas.total_questoes_respondidas}</h2>
           </div>
         </div>
       </section>

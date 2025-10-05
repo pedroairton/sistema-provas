@@ -100,8 +100,14 @@ export default function Livre() {
       console.log(data);
       if (!response.ok) {
         console.log("Erro HTTP: ", response.status);
+        if(data.errors.alternativa_selecionada_id){
+          alert(data.errors.alternativa_selecionada_id)
+        } else if(data.errors.questao_id){
+          alert(data.errors.questao_id)
+        }
+      } else{
+        alert(data.message);
       }
-      alert(data.message);
     } catch (error) {
       console.error("Erro: ", error);
       alert("Erro ao responder");

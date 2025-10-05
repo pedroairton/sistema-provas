@@ -64,6 +64,7 @@ export default function AdminHome() {
     const data = await response.json()
 
     console.log(data)
+    alert(data.message)
   };
   return (
     <section className="page-admin-home">

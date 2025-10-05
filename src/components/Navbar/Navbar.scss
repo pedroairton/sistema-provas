@@ -9,7 +9,7 @@ nav{
     // align-items: center;
     gap: 3rem;
     width: 200px;
-    height: 100vh;
+    height: 100dvh;
     z-index: 100;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     a{
@@ -40,6 +40,15 @@ nav{
                     bottom: -1rem;
                 }
             }
+        }
+    }
+    .logout{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        span{
+            color: white;
         }
     }
 }
