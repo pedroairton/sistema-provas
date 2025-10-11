@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { truncarComReticencias } from "../../function";
+import { truncarComReticencias } from "../../utils/function";
 import "./Livre.scss";
 import { useNavigate } from "react-router";
 

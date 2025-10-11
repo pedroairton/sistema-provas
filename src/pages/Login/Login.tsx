@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Login.scss";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { apiUrl } from "../../utils/api";
 
 export default function Login() {
   const [dataUsuario, setDataUsuario] = useState({
     email: "",
     senha: "",
   });
-
+  
   const handleLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setDataUsuario((prev) => ({
@@ -20,7 +21,7 @@ export default function Login() {
 
   const loginUsuario = async (e: any) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8000/api/usuario/login", {
+    const response = await fetch(apiUrl('usuario/login'), {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -69,6 +70,7 @@ export default function Login() {
           onChange={handleLogin}
         />
         <button type="submit">Fazer Login</button>
+        <Link to={'/cadastro'}>Cadastrar-se</Link>
       </form>
     </>
   );

@@ -1,0 +1,43 @@
+body {
+  background-color: #0A3566;
+}
+.form-login{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 450px;
+    padding: 1rem;
+    h1{
+        color: white;
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        padding: 0;
+        border-radius: 8px;
+        outline: solid transparent 1px;
+        padding-left: 1rem;
+        transition: .3s ease;
+        &:focus-visible{
+            outline: solid 1px #0f53a1;
+        }
+        &::placeholder{
+            font-weight: 600;
+            color: #0A3566;
+        }
+    }
+    button{
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        color: #0A3566;
+        transition: .3s;
+        border: solid 2px white;
+        &:hover{
+            background-color: #0A3566;
+            color: white;
+        }
+    }
+}

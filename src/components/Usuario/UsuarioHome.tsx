@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./UsuarioHome.scss";
-import { truncarComReticencias } from "../../function";
+import { truncarComReticencias } from "../../utils/function";
 import { Navigate, useNavigate } from "react-router";
 
 export default function UsuarioHome() {
