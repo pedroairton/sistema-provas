@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./UsuarioHome.scss";
 import { truncarComReticencias } from "../../utils/function";
-import { Navigate, useNavigate } from "react-router";
 
 export default function UsuarioHome() {
   const token = localStorage.getItem('usuario-token')

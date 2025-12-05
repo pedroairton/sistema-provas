@@ -1,11 +1,11 @@
 class ApiConfig {
-    private getBaseUrl(): string {
+    public getBaseUrl(): string {
         // prioridade env
         if(import.meta.env.VITE_API_URL) {
             return import.meta.env.VITE_API_URL
         }
 
-        const {hostname,protocol,port} = window.location
+        const {hostname,protocol} = window.location
         const isLocal = hostname === 'localhost' || hostname === '127.0.0.1'
 
         if(isLocal){

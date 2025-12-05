@@ -1,4 +1,3 @@
-import React from "react";
 import "./Navbar.scss";
 import type { Usuario } from "../../interfaces/Usuario";
 import { Link, useNavigate } from "react-router";

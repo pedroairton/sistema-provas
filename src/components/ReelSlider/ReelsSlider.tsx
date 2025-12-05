@@ -57,7 +57,6 @@ export default function ReelsSlider() {
       }));
 
       setReels((prev) => [...prev, ...newReels]);
-      setPage((prev) => prev + 1);
     } catch (error) {
       console.error("Erro: ", error);
     } finally {
