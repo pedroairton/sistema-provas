@@ -16,7 +16,7 @@ export default function ReelsSlider() {
   const isThrottledRef = useRef(false);
 
   const [reels, setReels] = useState<any[]>([]);
-  const [page, setPage] = useState(0);
+  // const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const [AltSelecionada, setAltSelecionada] = useState(String);
