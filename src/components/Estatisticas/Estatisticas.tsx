@@ -24,7 +24,7 @@ export default function Estatisticas() {
   const getEstatisticas = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/usuario/estatisticas",
+        "https://shuffle.srv1109011.hstgr.cloud/api/usuario/estatisticas",
         {
           headers: {
             Accept: "application/json",

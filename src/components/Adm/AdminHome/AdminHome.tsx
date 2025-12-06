@@ -54,7 +54,7 @@ export default function AdminHome() {
     // Aqui você pode enviar via fetch/axios, ex:
     // axios.post("/api/questao", payload);
 
-    const response = await fetch('http://localhost:8000/api/questao/criar', {
+    const response = await fetch('https://shuffle.srv1109011.hstgr.cloud/api/questao/criar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

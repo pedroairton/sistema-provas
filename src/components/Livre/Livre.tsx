@@ -29,7 +29,7 @@ export default function Livre() {
     const getQuestoes = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/usuario/questoes",
+          "https://shuffle.srv1109011.hstgr.cloud/api/usuario/questoes",
           {
             headers: {
               Accept: "application/json",
@@ -58,7 +58,7 @@ export default function Livre() {
   const getQuestao = async (idQuestao: number) => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/usuario/questoes/questao/" + idQuestao,
+        "https://shuffle.srv1109011.hstgr.cloud/api/usuario/questoes/questao/" + idQuestao,
         {
           headers: {
             Accept: "application/json",
@@ -85,7 +85,7 @@ export default function Livre() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/usuario/questoes/responder",
+        "https://shuffle.srv1109011.hstgr.cloud/api/usuario/questoes/responder",
         {
           method: "POST",
           headers: {

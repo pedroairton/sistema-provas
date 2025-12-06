@@ -30,7 +30,7 @@ export default function ReelsSlider() {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/usuario/questoes/random`,
+        `https://shuffle.srv1109011.hstgr.cloud/api/usuario/questoes/random`,
         {
           headers: {
             Accept: "application/json",
@@ -108,7 +108,7 @@ export default function ReelsSlider() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/usuario/questoes/responder",
+        "https://shuffle.srv1109011.hstgr.cloud/api/usuario/questoes/responder",
         {
           method: "POST",
           headers: {

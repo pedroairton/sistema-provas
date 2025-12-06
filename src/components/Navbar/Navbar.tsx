@@ -27,7 +27,7 @@ export default function Navbar() {
         navigate('/login');
         return
       }
-      const response = await fetch("http://localhost:8000/api/usuario/logout", {
+      const response = await fetch("https://shuffle.srv1109011.hstgr.cloud/api/usuario/logout", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
